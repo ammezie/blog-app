@@ -8,13 +8,15 @@
   <div class="mt-12 space-y-10">
     <template v-if="posts.length > 0">
       <div v-for="post in posts" :key="post.id">
-        <h2 class="text-2xl font-bold">{{ post.title }}</h2>
+        <RouterLink :to="{ name: 'post', params: { id: post.id } }">
+          <h2 class="text-2xl font-bold">{{ post.title }}</h2>
+        </RouterLink>
 
         <div class="mt-2 flex items-center justify-between">
           <p class="text-sm">{{ post.createdAt }}</p>
 
           <div class="space-x-2">
-            <RouterLink to="#" class="text-sm btn btn-link btn-xs"> Edit </RouterLink>
+            <RouterLink to="#" class="text-sm btn btn-link btn-xs">Edit</RouterLink>
             <button class="text-sm btn btn-error btn-xs">Delete</button>
           </div>
         </div>

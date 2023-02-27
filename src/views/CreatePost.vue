@@ -40,6 +40,6 @@ const post = ref({
 async function createPost() {
   await axiosClient.post('/posts', post.value)
 
-  router.push({ name: 'home' })
+  router.push({ name: 'postList' })
 }
 </script>
